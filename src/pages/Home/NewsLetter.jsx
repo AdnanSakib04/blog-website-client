@@ -11,7 +11,7 @@ const NewsLetter = () => {
          
     }
     return (
-        <div className="bg-gray-600 shadow-lg p-3 border mb-40 rounded-3xl max-w-7xl mx-auto mt-3 text-white">
+        <div className="bg-gray-600 shadow-lg p-3 border mb-40 rounded-3xl max-w-7xl mx-auto mt-20 text-white">
             <h1 className="mt-2 text-4xl text-center font-bold">Join Our Newsletter</h1>
             <p className="mt-2 text-center text-xl font-medium">Keep up with our latest news. Subscribe to our newsletter</p>
 
