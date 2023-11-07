@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
 const NewsLetter = () => {
     const handleNewsletter = e => {
         e.preventDefault();
@@ -7,12 +7,8 @@ const NewsLetter = () => {
         // const email = form.get('email');
 
 
-        Swal.fire({
-            title: 'Success!',
-            text: 'Subscribed Successfully',
-            icon: 'success',
-            confirmButtonText: 'OK'
-          })
+        toast.success('Thank you for subscribing to our newsletter');
+         
     }
     return (
         <div className="bg-[#b2d8d8] shadow-lg p-3 border mb-40 rounded-3xl max-w-7xl mx-auto mt-3 text-gray-950">
@@ -29,6 +25,7 @@ const NewsLetter = () => {
                     <button className=" w-1/2 btn bg-[#66b2b2] border-none font-bold text-xl text-gray-950">Subscribe</button>
                 </div>
             </form>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
