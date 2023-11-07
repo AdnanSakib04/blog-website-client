@@ -9,6 +9,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const BlogCard = ({ singleBlog }) => {
     const { photo, category, shortDescription, title, _id } = singleBlog;
+    console.log(_id);
 
     const { user} = useContext(AuthContext);
 
