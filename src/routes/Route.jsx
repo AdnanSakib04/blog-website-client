@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddBlog from "../pages/AddBlog/AddBlog";
 import AllBlogs from "../pages/AllBlogs/AllBlogs";
 import WishList from "../pages/WishList/WishList";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addblog",
-        element: <AddBlog></AddBlog>,
+        element: <PrivateRoute><AddBlog></AddBlog></PrivateRoute>,
       },
       {
         path: "/allblogs",
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/wishlist",
-        element: <WishList></WishList>,
+        element: <PrivateRoute><WishList></WishList></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/wishlist')
         
       },
