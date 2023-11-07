@@ -14,15 +14,15 @@ const NavBar = () => {
     }
     const navLinks = <>
         <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-bold  text-gray-950 lg:text-[#66b2b2] p-2 rounded-lg" : ""} to="/">Home</NavLink></li>
+            isPending ? "pending" : isActive ? "font-bold  text-gray-950 lg:text-gray-600 p-2 rounded-lg" : ""} to="/">Home</NavLink></li>
         <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-[#66b2b2] p-2 rounded-lg" : ""} to="/addblog">Add Blog</NavLink></li>
+            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-gray-600 p-2 rounded-lg" : ""} to="/addblog">Add Blog</NavLink></li>
         <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-[#66b2b2] p-2 rounded-lg" : ""} to="/allblogs">All Blogs</NavLink></li>
+            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-gray-600 p-2 rounded-lg" : ""} to="/allblogs">All Blogs</NavLink></li>
         <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-[#66b2b2] p-2 rounded-lg" : ""} to="/featuredblogs">Featured Blogs</NavLink></li>
+            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-gray-600 p-2 rounded-lg" : ""} to="/featuredblogs">Featured Blogs</NavLink></li>
         <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-[#66b2b2] p-2 rounded-lg" : ""} to="/wishlist">Wishlist</NavLink></li>
+            isPending ? "pending" : isActive ? " font-bold  text-gray-950 lg:text-gray-600 p-2 rounded-lg" : ""} to="/wishlist">Wishlist</NavLink></li>
 
     </>
     return (
@@ -41,7 +41,7 @@ const NavBar = () => {
                     <div className="flex items-center gap-2">
                         <div>
 
-                            <GiQuillInk className=" text-4xl  text-[#66b2b2]">
+                            <GiQuillInk className=" text-4xl  text-gray-600">
 
                             </GiQuillInk>
                         </div>
@@ -70,15 +70,15 @@ const NavBar = () => {
                                         <img src={user?.photoURL} />
                                     </div>
                                 </label>
-                                <button onClick={handleSignOut} className="btn bg-[#b2d8d8] font-bold text-gray-950">Log Out</button>
+                                <button onClick={handleSignOut} className="btn bg-gray-600 font-bold text-white">Log Out</button>
                             </div>
                             :
                             <>
                                 <Link to="/register">
-                                    <button className="btn bg-[#b2d8d8] text-gray-950 w-[90px]">Register</button>
+                                    <button className="btn bg-gray-600 text-white w-[90px]">Register</button>
                                 </Link>
                                 <Link to="/login">
-                                    <button className="btn bg-[#b2d8d8] text-gray-950 w-[90px]">Login</button>
+                                    <button className="btn bg-gray-600 text-white w-[90px]">Login</button>
                                 </Link>
                             </>
                     }

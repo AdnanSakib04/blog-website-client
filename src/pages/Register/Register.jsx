@@ -69,40 +69,40 @@ const Register = () => {
 
             <div className="  p-4 mt-8 rounded-3xl ">
                
-                <form onSubmit={handleRegister} className="md:w-1/2 mx-auto card-body bg-[#b2d8d8] rounded-3xl">
-                <h1 className="text-4xl font-bold lg:text-5xl mt-8 text-center text-gray-950"> Register</h1>
+                <form onSubmit={handleRegister} className="md:w-1/2 mx-auto card-body bg-gray-600 rounded-3xl">
+                <h1 className="text-4xl font-bold lg:text-5xl mt-8 text-center text-white"> Register</h1>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-medium text-[18px] text-gray-950">Name</span>
+                            <span className="label-text font-medium text-[18px] text-white">Name</span>
                         </label>
                         <input type="text"  name="name" placeholder="Name" className="input input-bordered  " required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-medium text-[18px] text-gray-950">Photo URL</span>
+                            <span className="label-text font-medium text-[18px] text-white">Photo URL</span>
                         </label>
                         <input type="text"  name="photo" placeholder="Photo URL" className="input input-bordered  " required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-medium text-[18px] text-gray-950">Email</span>
+                            <span className="label-text font-medium text-[18px] text-white">Email</span>
                         </label>
                         <input type="email" placeholder="email" name="email" className="input input-bordered  " required />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-medium text-[18px] text-gray-950">Password</span>
+                            <span className="label-text font-medium text-[18px] text-white">Password</span>
                         </label>
                         <input type="password" name="password" placeholder="password" className="input input-bordered  " required />
 
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn bg-[#66b2b2] border-none font-bold text-xl text-gray-950">Register</button>
+                        <button className="btn bg-gray-400  border-none font-bold text-xl text-white">Register</button>
                     </div>
-                    <p onClick={handleGoogleSignIn} className="mt-2 shadow-lg btn bg-transparent hover:  font-semibold hover:text-black py-2 px-4 border-2 border-[#66b2b2] hover:border-transparent rounded-xl max-w-max mx-auto text-gray-950">
+                    <p onClick={handleGoogleSignIn} className="mt-2 shadow-lg btn bg-transparent hover:  font-semibold hover:text-black py-2 px-4 border-2 border-grey-400 hover:border-transparent rounded-xl max-w-max mx-auto text-white">
                     <span className="text-3xl"><FcGoogle></FcGoogle></span> Continue with Google
                 </p>
-                    <p className="text-center mt-6 text-xl font-medium text-gray-950">Already have an account? <Link className=" text-blue-600 font-bold" to={'/login'}>Login</Link></p>
+                    <p className="text-center mt-6 text-xl font-medium text-white">Already have an account? <Link className=" text-green-500 font-bold" to={'/login'}>Login</Link></p>
                 </form>
                 
             </div>
