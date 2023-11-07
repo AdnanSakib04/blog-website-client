@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 
 const AddBlog = () => {
-    const { user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     // console.log(user.email);
 
     const handleAddBlog = event => {
@@ -20,10 +20,10 @@ const AddBlog = () => {
 
         // current user email
         const userEmail = user.email;
-        
-       
 
-        const newBlog = { photo, title, category, shortDescription, longDescription, userEmail}
+
+
+        const newBlog = { photo, title, category, shortDescription, longDescription, userEmail }
 
         console.log(newBlog);
 
@@ -37,13 +37,13 @@ const AddBlog = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Product Added Successfully',
+                        text: 'Blog Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
-                      })
+                    })
                 }
             })
     }
@@ -67,12 +67,26 @@ const AddBlog = () => {
                         </label>
                         <input type="text" name="title" placeholder="Title" className="input input-bordered " required />
                     </div>
-                    <div className="form-control">
+                    {/* <div className="form-control">
                         <label className="label">
                             <span className="label-text font-medium text-[18px] text-white">Category</span>
                         </label>
                         <input type="text" name="category" placeholder="Category" className="input input-bordered " required />
+                    </div> */}
+
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text font-medium text-[18px] text-white">Category</span>
+                        </label>
+                        <select name="category" className="input input-bordered" required>
+                            {/* <option value="" disabled>Select a category</option> */}
+                            <option value="food">food</option>
+                            <option value="travel">travel</option>
+                            <option value="health">health</option>
+                            <option value="lifestyle">lifestyle</option>
+                        </select>
                     </div>
+
                     
                     <div className="form-control">
                         <label className="label">
@@ -94,10 +108,10 @@ const AddBlog = () => {
                     </div>
                    
                    
-                </form>
+                </form >
 
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
