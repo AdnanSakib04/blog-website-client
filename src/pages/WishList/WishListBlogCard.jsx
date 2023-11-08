@@ -21,7 +21,7 @@ const WishListBlogCard = ({wishlistBlog, wishlistBlogs, setWishlistBlogs}) => {
 
 
 
-                fetch(`http://localhost:5000/wishlist/${_id}`, {
+                fetch(`https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/wishlist/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

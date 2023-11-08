@@ -34,7 +34,7 @@ const BlogDetails = () => {
 
     // fetch all the comments for all the blogs
     useEffect(() => {
-        fetch(`http://localhost:5000/comments/${id}`)
+        fetch(`https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/comments/${id}`)
             .then((res) => res.json())
             .then((data) => setComments(data));
         console.log(comments);
@@ -61,7 +61,7 @@ const BlogDetails = () => {
 
         console.log(newComment);
 
-        fetch('http://localhost:5000/addComment', {
+        fetch('https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/addComment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

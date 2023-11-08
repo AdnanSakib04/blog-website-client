@@ -1,7 +1,7 @@
 # Feather Blogs
 
 
-live Link: [https://brand-shop-12c6f.web.app/](https://brand-shop-12c6f.web.app/)
+live Link: [https://blog-website-36dc4.web.app/](https://blog-website-36dc4.web.app/)
 
 
 **Project features are given below:** 

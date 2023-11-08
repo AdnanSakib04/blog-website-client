@@ -41,31 +41,31 @@ const router = createBrowserRouter([
       {
         path: "/allblogs",
         element: <AllBlogs></AllBlogs>,
-        loader: () => fetch('http://localhost:5000/allblogs')
+        loader: () => fetch('https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/allblogs')
       },
       {
         path: "/wishlist",
         element: <PrivateRoute><WishList></WishList></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/wishlist')
+        loader: () => fetch('https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/wishlist')
         
       },
 
       {
         path: "/blogDetails/:id",
         element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
-        loader: () => fetch(`http://localhost:5000/allblogs`)
+        loader: () => fetch(`https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/allblogs`)
       },
 
       {
         path: "/updateBlog/:id",
         element: <PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allblogs/${params.id}`)
+        loader: ({params}) => fetch(`https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/allblogs/${params.id}`)
 
       },
       {
         path: "/featuredblogs",
         element: <FeaturedBlogs></FeaturedBlogs>,
-        loader: () => fetch('http://localhost:5000/featuredBlogs')
+        loader: () => fetch('https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/featuredBlogs')
       },
   
 
