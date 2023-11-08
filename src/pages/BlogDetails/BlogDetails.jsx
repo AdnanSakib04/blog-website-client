@@ -29,14 +29,18 @@ const BlogDetails = () => {
 
 
      const [comments, setComments] = useState();
+    //  const [specificPostComments, setSpecificPostComments] = useState();
  
      // fetch all the comments for all the blogs
      useEffect(() => {
-         fetch('http://localhost:5000/comments')
+         fetch(`http://localhost:5000/comments/${id}`)
            .then((res) => res.json())
            .then((data) => setComments(data));
        console.log(comments);
-     } );
+       //const filterComments = comments?.filter(comment => comment.blogId === id);
+     //  setSpecificPostComments(filterComments);
+
+     });
 
 
     const handleAddComment = event => {
@@ -100,6 +104,7 @@ const BlogDetails = () => {
             </div>
 
 
+
             {/* ----------------comment section-------------------- */}
             <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-20">
                 <h1 className="text-4xl font-bold lg:text-5xl mt-8 text-center text-gray-600">Add Comment</h1>
@@ -109,10 +114,6 @@ const BlogDetails = () => {
                     </label>
                     <input type="text" name="comment" placeholder="comment" className="input input-bordered " required />
                 </div>
-
-
-
-
 
                 <div className="form-control mt-6">
                     <input type="submit" className="btn bg-green-500 border-none font-bold text-xl text-white" value="Add comment" />
