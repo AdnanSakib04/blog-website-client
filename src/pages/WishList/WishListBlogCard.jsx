@@ -51,15 +51,12 @@ const WishListBlogCard = ({wishlistBlog, wishlistBlogs, setWishlistBlogs}) => {
             <h2 className=" text-justify"> {shortDescription}</h2>
 
             <div className="flex justify-evenly mt-2 ">
-                <Link to={`/blogDetails/${_id}`}><button className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details</button></Link>
+                <Link to={`/blogDetails/${productID}`}><button className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details</button></Link>
                 <button onClick={() => handleDelete(_id)} className="btn font-bold text-black   bg-red-500 rounded-lg border-none"><RiDeleteBinLine></RiDeleteBinLine>Remove</button>
             </div>
         </div>
     </div>
     );
 };
-       {/* <div className="flex justify-around">
-                    <button onClick={() => handleDelete(_id)} className="btn btn-circle bg-red-600 font-medium text-white  border-none text-xl font-extrabold"><RiDeleteBinLine></RiDeleteBinLine></button>
-
-                </div> */}
+     
 export default WishListBlogCard;
