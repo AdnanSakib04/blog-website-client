@@ -9,6 +9,7 @@ import AllBlogs from "../pages/AllBlogs/AllBlogs";
 import WishList from "../pages/WishList/WishList";
 import PrivateRoute from "./PrivateRoute";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
+import RecentBlogs from "../pages/Home/RecentBlogs/RecentBlogs";
 
 
 
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
         loader: () => fetch(`http://localhost:5000/allblogs`)
       },
+  
 
     ],
   },
