@@ -36,7 +36,7 @@ const BlogDetails = () => {
                 <p className=" text-xl text-justify mb-10  font-normal"><span className=" font-bold">Long Description: </span>{blog.longDescription}</p>
                 { ownersBlog?
                     <div className="flex justify-center">
-                    <button  className="btn bg-[#66b2b2] border-none text-xl text-gray-950"> <FaCartShopping></FaCartShopping>Add to Cart</button>
+                    <button  className="btn bg-green-500 border-none text-xl text-gray-950"> <FaCartShopping></FaCartShopping>Update</button>
                 </div> :<></>
                 }
 
