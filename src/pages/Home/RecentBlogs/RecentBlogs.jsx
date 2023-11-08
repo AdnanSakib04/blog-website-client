@@ -6,7 +6,7 @@ const RecentBlogs = () => {
     // console.log(loadedBlogs);
 
     useEffect(() => {
-        fetch('https://blog-website-server-3gitcue2i-navids-projects-b76e6fb9.vercel.app/recentBlogs')
+        fetch('https://blog-website-server-six.vercel.app/recentBlogs')
           .then((res) => res.json())
           .then((data) => setBlogs(data));
       console.log(blogs);

@@ -30,7 +30,7 @@ const AddBlog = () => {
 
         console.log(newBlog);
 
-        fetch('https://blog-website-server-3gitcue2i-navids-projects-b76e6fb9.vercel.app/addblog', {
+        fetch('https://blog-website-server-six.vercel.app/addblog', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
