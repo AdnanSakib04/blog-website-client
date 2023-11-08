@@ -24,15 +24,16 @@ const Register = () => {
         
 
         
-        if (password.length<6) {
+        if (password.length < 6) {
             toast.error('Password must be at least 6 characters or more.');
             return;
-        }
-        else if (!/[A-Z]/.test(password)) {
+        } else if (!/[A-Z]/.test(password)) {
             toast.error('Password must contain at least one uppercase letter.');
             return;
-        }
-        else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        } else if (!/[0-9]/.test(password)) {
+            toast.error('Password must contain at least one number.');
+            return;
+        } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
             toast.error('Password must contain at least one special character.');
             return;
         }
