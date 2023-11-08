@@ -106,21 +106,27 @@ const BlogDetails = () => {
 
 
             {/* ----------------comment section-------------------- */}
-            <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-20">
-                <h1 className="text-4xl font-bold lg:text-5xl mt-8 text-center text-gray-600">Add Comment</h1>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text font-medium text-[18px] text-gray-600">Comment</span>
-                    </label>
-                    <input type="text" name="comment" placeholder="comment" className="input input-bordered " required />
-                </div>
 
-                <div className="form-control mt-6">
-                    <input type="submit" className="btn bg-green-500 border-none font-bold text-xl text-white" value="Add comment" />
-                </div>
+            <h1 className="text-4xl font-bold lg:text-5xl mb-8 text-center text-gray-600">Comment Section</h1>
+           {ownersBlog? 
+                <><h1 className="text-center text-2xl  text-red-500">Can not comment on own blog</h1></>
+                :
+           <div className=" p-4">
+              <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-20">
+             <h1 className="text-xl font-bold lg:text-2xl  text-center text-gray-600">Add Comment</h1>
+             <div className="form-control">
+
+                 <input type="text" name="comment" placeholder="comment" className="input input-bordered " required />
+             </div>
+
+             <div className="form-control mt-6">
+                 <input type="submit" className="btn bg-green-500 border-none font-bold text-xl text-white" value="Add comment" />
+             </div>
 
 
-            </form >
+         </form >
+           </div>
+           }
 
             <div className="max-w-7xl p-4 mx-auto">
             {comments?.map(singleComment => (
