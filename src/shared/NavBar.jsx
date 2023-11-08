@@ -7,6 +7,8 @@ import { GiQuillInk } from "react-icons/gi";
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
 
+    // console.log("---------",user?.displayName);
+
     const handleSignOut = () => {
         logOut()
             .then()

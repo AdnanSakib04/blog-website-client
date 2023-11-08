@@ -14,6 +14,7 @@ const BlogDetails = () => {
     console.log("---", id);
     const blog = blogData.find(blog => blog._id === id);
     const { user } = useContext(AuthContext);
+    
     let ownersBlog;
 
     if (user.email === blog.userEmail) {
@@ -53,9 +54,10 @@ const BlogDetails = () => {
 
         // current user email and photoURL
         const userEmail = user.email;
+        const userName = user.displayName;
         const userPhoto = user.photoURL;
 
-        const newComment = { comment, blogId, userEmail, userPhoto };
+        const newComment = { comment, blogId, userEmail, userPhoto, userName };
 
         console.log(newComment);
 
@@ -112,7 +114,7 @@ const BlogDetails = () => {
                 <><h1 className="text-center text-2xl  text-red-500">Can not comment on own blog</h1></>
                 :
                 <div className=" p-4">
-                    <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-20">
+                    <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-10">
                         <h1 className="text-xl font-bold lg:text-2xl  text-center text-gray-600">Add Comment</h1>
                         <div className="form-control">
 
