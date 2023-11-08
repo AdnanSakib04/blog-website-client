@@ -21,9 +21,11 @@ const AddBlog = () => {
         // current user email
         const userEmail = user.email;
 
+        const currentTime = new Date();
 
 
-        const newBlog = { photo, title, category, shortDescription, longDescription, userEmail }
+
+        const newBlog = { photo, title, category, shortDescription, longDescription, userEmail, currentTime }
 
         console.log(newBlog);
 
