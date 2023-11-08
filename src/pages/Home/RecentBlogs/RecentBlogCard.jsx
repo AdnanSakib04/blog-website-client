@@ -24,7 +24,7 @@ const RecentBlogCard = ({singleBlog}) => {
 
         console.log(wishlistBlog);
 
-        fetch('https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/wishlist', {
+        fetch('https://blog-website-server-3gitcue2i-navids-projects-b76e6fb9.vercel.app/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -19,7 +19,7 @@ const UpdateBlog = () => {
 
         console.log(updatedBlog);
 
-        fetch(`https://blog-website-server-2jmlybdvl-navids-projects-b76e6fb9.vercel.app/updateBlog/${_id}`, {
+        fetch(`https://blog-website-server-3gitcue2i-navids-projects-b76e6fb9.vercel.app/updateBlog/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
