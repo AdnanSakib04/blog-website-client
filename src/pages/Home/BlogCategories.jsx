@@ -1,6 +1,4 @@
 import { IoFastFoodOutline } from "react-icons/io5";
-import { AiOutlineDollarCircle } from "react-icons/ai";
-import { RiCustomerServiceFill } from "react-icons/ri";
 import { BiSolidPlaneAlt } from "react-icons/bi";
 import { GiLifeBar } from "react-icons/gi";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
