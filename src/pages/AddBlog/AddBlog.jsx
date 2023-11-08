@@ -18,14 +18,15 @@ const AddBlog = () => {
         const shortDescription = form.shortDescription.value;
         const longDescription = form.longDescription.value;
 
-        // current user email
+        // current user email and photoURL
         const userEmail = user.email;
+        const userPhoto = user.photoURL;
 
         const currentTime = new Date();
 
 
 
-        const newBlog = { photo, title, category, shortDescription, longDescription, userEmail, currentTime }
+        const newBlog = { photo, title, category, shortDescription, longDescription, userEmail, userPhoto, currentTime }
 
         console.log(newBlog);
 
