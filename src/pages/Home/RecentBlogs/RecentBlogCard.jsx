@@ -53,9 +53,9 @@ const RecentBlogCard = ({singleBlog}) => {
             <div className="card-body">
                 <h2 className="text-[22px] font-bold text-black"> {title}</h2>
                 <h2 className="text-xl font-medium text-black">Category: {category}</h2>
-                <h2 className=" text-justify"> {shortDescription}</h2>
+                <h2 className=" text-justify mb-2"> {shortDescription}</h2>
 
-                <div className="flex justify-evenly mt-2 ">
+                <div className="flex justify-evenly mt-auto">
                     <Link to={`/blogDetails/${_id}`}><motion.button whileHover={{scale:1.25}} className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details
                     </motion.button></Link>
                     <motion.button whileHover={{scale:1.25}} onClick={handleAddToWishlist} className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</motion.button>

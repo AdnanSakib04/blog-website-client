@@ -48,9 +48,9 @@ const WishListBlogCard = ({wishlistBlog, wishlistBlogs, setWishlistBlogs}) => {
         <div className="card-body">
             <h2 className="text-[22px] font-bold text-black"> {title}</h2>
             <h2 className="text-xl font-medium text-black">Category: {category}</h2>
-            <h2 className=" text-justify"> {shortDescription}</h2>
+            <h2 className=" text-justify mb-2"> {shortDescription}</h2>
 
-            <div className="flex justify-evenly mt-2 ">
+            <div className="flex justify-evenly mt-auto ">
                 <Link to={`/blogDetails/${productID}`}><button className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details</button></Link>
                 <button onClick={() => handleDelete(_id)} className="btn font-bold text-black   bg-red-500 rounded-lg border-none"><RiDeleteBinLine></RiDeleteBinLine>Remove</button>
             </div>
