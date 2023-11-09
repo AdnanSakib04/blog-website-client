@@ -38,7 +38,7 @@ const BlogDetails = () => {
             const res = await fetch(`https://blog-website-server-six.vercel.app/comments/${id}`);
             return res.json();
         },
-         refetchInterval: 1000, // for refetching the data every 1 seconds
+        refetchInterval: 1000, // for refetching the data every 1 seconds
     });
     if (isPending) {
         return <span className=" loading loading-spinner text-primary"></span>
@@ -124,47 +124,51 @@ const BlogDetails = () => {
 
             {/* ----------------comment section-------------------- */}
 
-            <h1 className="text-4xl font-bold lg:text-5xl mb-8 text-center text-gray-600">Comment Section</h1>
-            {ownersBlog ?
-                <><h1 className="text-center text-2xl mb-4  text-red-500">Can not comment on own blog</h1></>
-                :
-                <div className=" p-4">
-                    <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-10">
-                        <h1 className="text-xl font-bold lg:text-2xl  text-center text-gray-600">Add Comment</h1>
-                        <div className="form-control">
+            <div className="max-w-7xl  mx-auto">
+                <h1 className="text-4xl font-bold lg:text-5xl mb-8 text-center text-gray-600">Comment Section</h1>
+                {ownersBlog ?
+                    <><h1 className="text-center text-2xl mb-4  text-red-500">Can not comment on own blog</h1></>
+                    :
+                    <div className=" p-4">
+                        <form onSubmit={handleAddComment} className=" mx-auto card-body bg-gray-300  rounded-3xl  mb-10">
+                            <div className="md:flex gap-4 items-center">
+                               <div className=" md:w-3/4">
+                              
+                                <div className="form-control ">
+                                    <textarea
+                                        name="comment"
+                                        placeholder="comment"
+                                        className="input input-bordered border-4 "
+                                        required
+                                    ></textarea>
+                                </div>
 
-                            {/* <input type="text" name="comment" placeholder="comment" className="input input-bordered " required /> */}
-                            <textarea
-                                name="comment"
-                                placeholder="comment"
-                                className="input input-bordered"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <div className="form-control mt-6">
-                            <input type="submit" className="btn bg-green-500 border-none font-bold text-xl text-white" value="Add comment" />
-                        </div>
-
-
-                    </form >
-                </div>
-            }
-
-           <div className="mb-6 p-4">
-           <div className="max-w-7xl px-4 pt-4 pb-2 mx-auto bg-gray-300  rounded-3xl">
-                {comments?.map(singleComment => (
-                    <CommentCard
-                        key={singleComment._id}
-                        singleComment={singleComment}
-                        comments={comments}
-                    >
-                    </CommentCard>
-                ))}
+                               </div>
+                                <div className="form-control mt-6 w-1/2 mx-auto md:w-1/4 ">
+                                    <input type="submit" className="btn md:mb-6 bg-green-500 border-none font-bold md:text-xl text-white" value="Add comment" />
+                                </div>
+                            </div>
 
 
+                        </form >
+                    </div>
+                }
             </div>
-           </div>
+
+            <div className="mb-6 p-4">
+                <div className="max-w-7xl px-4 pt-4 pb-2 mx-auto bg-gray-300  rounded-3xl">
+                    {comments?.map(singleComment => (
+                        <CommentCard
+                            key={singleComment._id}
+                            singleComment={singleComment}
+                            comments={comments}
+                        >
+                        </CommentCard>
+                    ))}
+
+
+                </div>
+            </div>
         </div>
 
     );
