@@ -126,7 +126,7 @@ const BlogDetails = () => {
 
             <h1 className="text-4xl font-bold lg:text-5xl mb-8 text-center text-gray-600">Comment Section</h1>
             {ownersBlog ?
-                <><h1 className="text-center text-2xl  text-red-500">Can not comment on own blog</h1></>
+                <><h1 className="text-center text-2xl mb-4  text-red-500">Can not comment on own blog</h1></>
                 :
                 <div className=" p-4">
                     <form onSubmit={handleAddComment} className="md:w-1/2 mx-auto card-body  rounded-3xl border-2 border-gray-600 mb-10">
@@ -151,7 +151,8 @@ const BlogDetails = () => {
                 </div>
             }
 
-            <div className="max-w-7xl p-4 mx-auto">
+           <div className="mb-6 p-4">
+           <div className="max-w-7xl px-4 pt-4 pb-2 mx-auto bg-gray-300  rounded-3xl">
                 {comments?.map(singleComment => (
                     <CommentCard
                         key={singleComment._id}
@@ -163,6 +164,7 @@ const BlogDetails = () => {
 
 
             </div>
+           </div>
         </div>
 
     );
