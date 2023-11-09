@@ -1,8 +1,28 @@
+import { useQuery } from "@tanstack/react-query";
 import DataTable from "react-data-table-component";
 import { useLoaderData } from "react-router-dom";
 
 const FeaturedBlogs = () => {
-  const featuredBlogs = useLoaderData();
+  //--------- instead of loader, i will use transtack query-------
+  // const featuredBlogs = useLoaderData();
+
+
+
+  const { isPending, isError, error, data: featuredBlogs } = useQuery({
+    queryKey: ['featuredBlogs'],
+    queryFn: async () => {
+      const res = await fetch('https://blog-website-server-six.vercel.app/featuredBlogs');
+      return res.json()
+    }
+  })
+  if (isPending) {
+    return <span className=" loading loading-spinner text-primary"></span>
+  }
+  if (isError) {
+    return <p>{error.message}</p>
+  }
+
+  
 
   // add a serial number to each blog
   // because my database documents does not have any serial number

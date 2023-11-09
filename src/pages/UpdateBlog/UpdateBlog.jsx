@@ -2,7 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateBlog = () => {
-    const blog = useLoaderData();
+     const blog = useLoaderData();
+
     const { _id, photo, title, category, shortDescription, longDescription } = blog;
 
     const handleUpdateBlog = event => {

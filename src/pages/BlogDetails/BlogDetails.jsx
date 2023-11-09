@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import CommentCard from "./CommentCard";
+import { useQuery } from "@tanstack/react-query";
 
 
 const BlogDetails = () => {
@@ -14,7 +15,7 @@ const BlogDetails = () => {
     console.log("---", id);
     const blog = blogData.find(blog => blog._id === id);
     const { user } = useContext(AuthContext);
-    
+
     let ownersBlog;
 
     if (user.email === blog.userEmail) {
@@ -29,19 +30,33 @@ const BlogDetails = () => {
 
 
 
-    const [comments, setComments] = useState();
-    //  const [specificPostComments, setSpecificPostComments] = useState();
 
-    // fetch all the comments for all the blogs
-    useEffect(() => {
-        fetch(`https://blog-website-server-six.vercel.app/comments/${id}`)
-            .then((res) => res.json())
-            .then((data) => setComments(data));
-        console.log(comments);
-        //const filterComments = comments?.filter(comment => comment.blogId === id);
-        //  setSpecificPostComments(filterComments);
-
+    // fetch all the comments for the specific blogs
+    const { isPending, isError, error, data: comments } = useQuery({
+        queryKey: ['comments'],
+        queryFn: async () => {
+            const res = await fetch(`https://blog-website-server-six.vercel.app/comments/${id}`);
+            return res.json();
+        },
+         refetchInterval: 1000, // for refetching the data every 1 seconds
     });
+    if (isPending) {
+        return <span className=" loading loading-spinner text-primary"></span>
+    }
+    if (isError) {
+        return <p>{error.message}</p>
+    }
+
+
+    // ---------i will use transtack query instead of useEffect
+    // const [comments, setComments] = useState();
+
+    // useEffect(() => {
+    //     fetch(`https://blog-website-server-six.vercel.app/comments/${id}`)
+    //         .then((res) => res.json())
+    //         .then((data) => setComments(data));
+    //     console.log(comments);
+    // });
 
 
     const handleAddComment = event => {

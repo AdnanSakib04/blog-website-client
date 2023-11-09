@@ -3,7 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import BlogCard from "./BlogCard";
 
 const AllBlogs = () => {
-  const loadedBlogs = useLoaderData();
+   const loadedBlogs = useLoaderData();
+
   const [blogs, setBlogs] = useState(loadedBlogs);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [search, setSearch] = useState("");
@@ -72,7 +73,7 @@ const AllBlogs = () => {
 
         {/*all blog cards*/}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-6 md:p-0 gap-y-6 mb-20 justify-items-center">
-          {blogs.map(singleBlog => (
+          {blogs?.map(singleBlog => (
             <BlogCard
               key={singleBlog._id}
               singleBlog={singleBlog}

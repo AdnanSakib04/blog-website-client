@@ -9,7 +9,6 @@ import AllBlogs from "../pages/AllBlogs/AllBlogs";
 import WishList from "../pages/WishList/WishList";
 import PrivateRoute from "./PrivateRoute";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
-import RecentBlogs from "../pages/Home/RecentBlogs/RecentBlogs";
 import UpdateBlog from "../pages/UpdateBlog/UpdateBlog";
 import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
 
@@ -65,7 +64,8 @@ const router = createBrowserRouter([
       {
         path: "/featuredblogs",
         element: <FeaturedBlogs></FeaturedBlogs>,
-        loader: () => fetch('https://blog-website-server-six.vercel.app/featuredBlogs')
+        // loader: () => fetch('https://blog-website-server-six.vercel.app/featuredBlogs')
+        // instead of loader, i used transtack query
       },
   
 
