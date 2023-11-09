@@ -11,7 +11,8 @@ live Link: [https://blog-website-36dc4.web.app/](https://blog-website-36dc4.web.
 - **Filter by Category:** Using a dropdown element, users can also filter the blogs by category.
 - **Recent Blogs:** In the recent blogs section, the lates 6 blogs are displayed.
 - **Wishlist:** Each user can save blogs to their wishlist. Each user can see their added blogs on the wishlist page. User can login from any device to see their wishlist blogs. Wishlist blogs are added to database.
-- **Updating Blogs:** An user can only update their own blogs.
+- **Updating Blogs:** A user can only update their own blogs.
+- **Animation:** I have used framer-motion package on my home page. So the users can enjoy the animation on the home page.
 - **Database Integration:** My website also has database integration. It helps to store blogs and users' comments. 
 - **Email and Password Authentication:** Users can create there account with their email and setting up a password. They can login any time into the website using their email and password.
 - **Private Route:** This project also includes private routes. 
