@@ -1,4 +1,7 @@
 import { ToastContainer, toast } from "react-toastify";
+import { motion } from "framer-motion"
+
+
 const NewsLetter = () => {
     const handleNewsletter = e => {
         e.preventDefault();
@@ -24,7 +27,7 @@ const NewsLetter = () => {
                         </div>
 
                         <div className="form-control mt-3 flex items-center">
-                            <button className=" w-1/2 btn bg-green-500 border-none font-bold text-xl text-gray-950">Subscribe</button>
+                            <motion.button whileHover={{scale: 1.25}} className=" w-1/2 btn bg-green-500 border-none font-bold text-xl text-gray-950">Subscribe</motion.button>
                         </div>
                     </form>
                     <ToastContainer></ToastContainer>

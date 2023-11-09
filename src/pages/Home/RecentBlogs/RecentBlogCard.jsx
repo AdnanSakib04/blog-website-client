@@ -4,6 +4,8 @@ import { BsBookmarks } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { motion } from "framer-motion"
+
 const RecentBlogCard = ({singleBlog}) => {
     const { photo, category, shortDescription, title, _id } = singleBlog;
     console.log(_id);
@@ -45,7 +47,8 @@ const RecentBlogCard = ({singleBlog}) => {
             })
     }
     return (
-        <div className="card w-96 bg-gray-400 shadow-xl">
+        <motion.div animate={{scale:1}} initial={{scale:0}} transition={{type:"tween", duration: 2}}
+         className="card w-96 bg-gray-400 shadow-xl">
             <figure><img className="h-[213px] w-full" src={photo} alt="" /></figure>
             <div className="card-body">
                 <h2 className="text-[22px] font-bold text-black"> {title}</h2>
@@ -53,11 +56,12 @@ const RecentBlogCard = ({singleBlog}) => {
                 <h2 className=" text-justify"> {shortDescription}</h2>
 
                 <div className="flex justify-evenly mt-2 ">
-                    <Link to={`/blogDetails/${_id}`}><button className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details</button></Link>
-                    <button onClick={handleAddToWishlist} className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</button>
+                    <Link to={`/blogDetails/${_id}`}><motion.button whileHover={{scale:1.25}} className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details
+                    </motion.button></Link>
+                    <motion.button whileHover={{scale:1.25}} onClick={handleAddToWishlist} className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</motion.button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
