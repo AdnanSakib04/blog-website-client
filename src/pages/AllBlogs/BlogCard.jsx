@@ -57,7 +57,15 @@ const BlogCard = ({ singleBlog }) => {
 
             <div className="flex justify-evenly mt-auto">
                 <Link to={`/blogDetails/${_id}`}><button className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details</button></Link>
-                <button onClick={handleAddToWishlist} className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</button>
+               
+
+                {/* check to see if user is logged in or not */}
+                {
+                    user? 
+                    <button onClick={handleAddToWishlist} className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</button>
+                    :
+                    <Link to={`/login`}><button className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</button></Link>
+                   }
             </div>
         </div>
     </div>

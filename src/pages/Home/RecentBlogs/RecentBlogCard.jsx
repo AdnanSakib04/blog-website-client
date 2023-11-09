@@ -14,7 +14,6 @@ const RecentBlogCard = ({singleBlog}) => {
 
 
     const handleAddToWishlist = () => {
-
         const wishlistBlog = {
             productID: _id,
             email: user.email,
@@ -58,7 +57,14 @@ const RecentBlogCard = ({singleBlog}) => {
                 <div className="flex justify-evenly mt-auto">
                     <Link to={`/blogDetails/${_id}`}><motion.button whileHover={{scale:1.25}} className="btn bg-blue-300 text-black font-bold rounded-lg  border-none"><BiDetail></BiDetail>Details
                     </motion.button></Link>
+                   
+                   {/* check to see if user is logged in or not */}
+                   {
+                    user? 
                     <motion.button whileHover={{scale:1.25}} onClick={handleAddToWishlist} className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</motion.button>
+                    :
+                    <Link to={`/login`}><motion.button whileHover={{scale:1.25}}  className="btn font-bold text-black   bg-orange-300  rounded-lg border-none"><BsBookmarks></BsBookmarks>Wishlist</motion.button></Link>
+                   }
                 </div>
             </div>
         </motion.div>
