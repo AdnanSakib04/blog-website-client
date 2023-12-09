@@ -1,7 +1,7 @@
 # Feather Blogs
 
 
-live Link: [https://blog-website-36dc4.web.app/](https://blog-website-36dc4.web.app/)
+live Link: [https://abcdabounding-snakes.surge.sh/](https://abcdabounding-snakes.surge.sh/)
 
 
 **Project features are given below:** 
