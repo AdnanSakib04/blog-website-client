@@ -4,6 +4,8 @@
 live Link: [https://abcdabounding-snakes.surge.sh/](https://abcdabounding-snakes.surge.sh/)
 
 
+**Technologies Used:** React, MongoDB, DaisyUI, Firebase, Tailwind CSS
+
 **Project features are given below:** 
 
 - **Comment Section:** Users can comment on other user's blogs. But they can not comment on their own blog.
